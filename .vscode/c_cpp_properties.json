@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/JustEnoughMod/include",
+                "${workspaceFolder}/JustEnoughMod/vendor/bgfx/bgfx/include",
+                "${workspaceFolder}/JustEnoughMod/vendor/bgfx/bimg/include",
+                "${workspaceFolder}/JustEnoughMod/vendor/bgfx/bx/include",
+                "${workspaceFolder}/JustEnoughMod/vendor/sdl/include",
+                "${workspaceFolder}/JustEnoughMod/vendor/dylib/include"
+            ],
+            "defines": [],
+            "cStandard": "c23",
+            "cppStandard": "c++23",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}
