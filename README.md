@@ -1,0 +1,2 @@
+# JustEnoughModCore
+JustEnoughMod Core Plugin
