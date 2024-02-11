@@ -22,7 +22,4 @@ public:
     }
 };
 
-std::shared_ptr<Plugin> _createPlugin()
-{
-    return std::shared_ptr<Plugin>(new CorePlugin());
-}
+JEM_PLUGIN_DEF(CorePlugin)

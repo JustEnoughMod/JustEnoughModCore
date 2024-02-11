@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 
-
 file(GLOB SRC "src/*.cpp" "src/*.hpp")
 
 add_subdirectory("JustEnoughMod")
