@@ -1,6 +1,8 @@
 {
-  description = "An over-engineered Hello World in C";
-
+  inputs = {
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+  };
+  
   outputs = { self, nixpkgs }:
     let
       lastModifiedDate =
@@ -22,16 +24,11 @@
 
         JustEnoughMod = with final;
           let
+            stdenv = pkgs.llvmPackages_17.stdenv;
             bgfx = prev.fetchgit {
               url = "https://github.com/bkaradzic/bgfx.cmake";
               rev = "011e8efe231d3d9aba9caf634dbc86d85263d20e";
               sha256 = "sha256-whNLa8ZCgfLXwnXnp4EczNWfMqvlO71eQnagpmW7p+c=";
-              fetchSubmodules = true;
-            };
-            sdl = prev.fetchgit {
-              url = "https://github.com/libsdl-org/SDL";
-              rev = "859844eae358447be8d66e6da59b6fb3df0ed778";
-              sha256 = "sha256-uKL9/T6vCEqMqmD3Q3rCMtKPRJZ4fRYVUr+4628/Ajg=";
               fetchSubmodules = true;
             };
             dylib = prev.fetchgit {
@@ -40,7 +37,7 @@
               sha256 = "sha256-Pax8KYypbGVIReQuiwZ2kdgQqFuFYuoLA6YZgQLVE4w=";
               fetchSubmodules = true;
             };
-          in clangStdenv.mkDerivation rec {
+          in stdenv.mkDerivation rec {
             pname = "JustEnoughMod";
             inherit version;
 
@@ -48,11 +45,12 @@
 
             enableParallelBuilding = true;
 
-            nativeBuildInputs = [ pkg-config cmake ninja git binutils lld ];
+            nativeBuildInputs = [ pkg-config meson ninja git binutils ];
             buildInputs = [
               alsa-lib
               audiofile
               dbus
+              cmake
               egl-wayland
               glslang
               ibus
@@ -68,6 +66,7 @@
               mesa
               pcre2
               pipewire
+              SDL2
               shaderc
               sndio
               udev
@@ -94,11 +93,10 @@
               "${vulkan-validation-layers}/share/vulkan/explicit_layer.d";
 
             preConfigure = ''
-              cp -r ${bgfx} vendor/bgfx
-              cp -r ${sdl} vendor/sdl
-              cp -r ${dylib} vendor/dylib
+              cp -r ${bgfx} subprojects/bgfx
+              cp -r ${dylib} subprojects/dylib
 
-              chmod 777 -R vendor
+              chmod 777 -R subprojects
             '';
 
             installPhase = ''

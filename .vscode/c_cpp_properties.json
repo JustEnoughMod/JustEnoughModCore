@@ -4,12 +4,12 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/JustEnoughMod/include",
-                "${workspaceFolder}/JustEnoughMod/vendor/bgfx/bgfx/include",
-                "${workspaceFolder}/JustEnoughMod/vendor/bgfx/bimg/include",
-                "${workspaceFolder}/JustEnoughMod/vendor/bgfx/bx/include",
-                "${workspaceFolder}/JustEnoughMod/vendor/sdl/include",
-                "${workspaceFolder}/JustEnoughMod/vendor/dylib/include"
+                "${workspaceFolder}/subprojects/JustEnoughMod/include",
+                "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/bgfx/bgfx/include",
+                "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/bgfx/bimg/include",
+                "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/bgfx/bx/include",
+                "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/SDL*/include",
+                "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/dylib/include"
             ],
             "defines": [],
             "cStandard": "c23",
