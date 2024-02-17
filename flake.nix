@@ -44,12 +44,11 @@
 
             enableParallelBuilding = true;
 
-            nativeBuildInputs = [ pkg-config meson ninja ccache git binutils mold ];
+            nativeBuildInputs = [ pkg-config cmake meson ninja ccache git binutils ];
             buildInputs = [
               alsa-lib
               audiofile
               dbus
-              cmake
               egl-wayland
               glslang
               ibus
