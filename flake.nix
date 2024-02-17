@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
-  
+
   outputs = { self, nixpkgs }:
     let
       lastModifiedDate =
@@ -10,7 +10,7 @@
       version = builtins.substring 0 8 lastModifiedDate;
 
       supportedSystems =
-        [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
+        [ "x86_64-linux" "aarch64-linux" ];
 
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
@@ -24,7 +24,6 @@
 
         JustEnoughMod = with final;
           let
-            stdenv = pkgs.llvmPackages_17.stdenv;
             bgfx = prev.fetchgit {
               url = "https://github.com/bkaradzic/bgfx.cmake";
               rev = "011e8efe231d3d9aba9caf634dbc86d85263d20e";
@@ -45,7 +44,7 @@
 
             enableParallelBuilding = true;
 
-            nativeBuildInputs = [ pkg-config meson ninja git binutils ];
+            nativeBuildInputs = [ pkg-config meson ninja ccache git binutils mold ];
             buildInputs = [
               alsa-lib
               audiofile

@@ -5,7 +5,7 @@ using namespace JEM;
 class CorePlugin : public Plugin
 {
 public:
-    virtual std::string getPluginName()
+    virtual const char *getPluginName()
     {
         return "JustEnoughModCore";
     }
