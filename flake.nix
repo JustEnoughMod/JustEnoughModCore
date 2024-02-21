@@ -20,21 +20,7 @@
       overlay = final: prev: {
         JustEnoughMod = with final;
           let
-            bgfx = prev.fetchgit {
-              url = "https://github.com/LDprg/bgfx.meson";
-              sha256 = "sha256-1xGy+Rja9YNUWAc70ckc5H6tEmLeSPCUJ8T//eWKE1s=";
-              fetchSubmodules = true;
-            };
-            dylib = prev.fetchgit {
-              url = "https://github.com/LDprg/dylib.meson";
-              sha256 = "sha256-bdYkfmxzv30+EQ4hXmIZ07rsyjz9YtSGEIOzUBDPJpM=";
-              fetchSubmodules = true;
-            };
-            JustEnoughMod = prev.fetchgit {
-              url = "https://github.com/LDprg/JustEnoughMod";
-              sha256 = "sha256-d00KSOeeJd2VHSSpXtPjZDmfMBDCIBOxvd6sq6wHQ+A=";
-              fetchSubmodules = true;
-            };
+            sources = import ./nix/sources.nix;
           in stdenv.mkDerivation rec {
             pname = "JustEnoughModCore";
             inherit version;
@@ -50,18 +36,19 @@
             buildInputs = [ SDL2 cmake libGL ];
 
             preConfigure = ''
-              cp -r ${bgfx} subprojects/bgfx
-              cp -r ${dylib} subprojects/dylib
-              cp -r ${JustEnoughMod} subprojects/JustEnoughMod
+              cp -r ${sources.bgfx} subprojects/bgfx
+              cp -r ${sources.dylib} subprojects/dylib
+              cp -r ${sources.JustEnoughMod} subprojects/JustEnoughMod
 
               chmod 777 -R subprojects
             '';
 
             installPhase = ''
               mkdir -p $out/bin
+              mkdir -p $out/bin/Plugins
               mv subprojects/JustEnoughMod/JustEnoughMod $out/bin
               mv subprojects/JustEnoughMod/libJustEnoughMod.so $out/bin
-              mv libJustEnoughModCore.so $out/bin
+              mv libJustEnoughModCore.so $out/bin/Plugins
               wrapProgram $out/bin/JustEnoughMod \
                 --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libGL ]}
             '';
