@@ -1,5 +1,6 @@
 result
 build
 run
-subprojects/bgfx
-subprojects/dylib
+subprojects/*
+!subprojects/JustEnoughMod
+!subprojects/*.wrap
