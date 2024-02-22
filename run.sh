@@ -1,5 +1,5 @@
-mv ./build/subprojects/JustEnoughMod/JustEnoughMod ./build/JustEnoughMod
-mv ./build/subprojects/JustEnoughMod/libJustEnoughMod.so ./build/libJustEnoughMod.so
-mkdir -p ./build/Plugins
-mv ./build/libJustEnoughModCore.so ./build/Plugins/libJustEnoughModCore.so
-./build/JustEnoughMod
+mkdir -p ./run/Plugins
+cp ./build/subprojects/JustEnoughMod/JustEnoughMod ./run/JustEnoughMod
+cp ./build/subprojects/JustEnoughMod/libJustEnoughMod.so ./run/libJustEnoughMod.so
+cp ./build/libJustEnoughModCore.so ./run/Plugins/libJustEnoughModCore.so
+./run/JustEnoughMod
