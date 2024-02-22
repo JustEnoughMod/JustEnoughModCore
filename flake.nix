@@ -1,7 +1,24 @@
 {
-  inputs = { nixpkgs.url = "nixpkgs/nixos-unstable"; };
+  inputs = { 
+    nixpkgs.url = "nixpkgs/nixos-unstable"; 
+    bgfx = {
+      url = "https://github.com/LDprg/bgfx.meson";
+      type = "git";
+      submodules = true;
+    };
+    dylib = {
+      url = "https://github.com/LDprg/dylib.meson";
+      type = "git";
+      submodules = true;
+    };
+    JustEnoughMod = {
+      url = "https://github.com/LDprg/JustEnoughMod";
+      type = "git";
+      submodules = true;
+    };
+  };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, bgfx, dylib, JustEnoughMod }:
     let
       lastModifiedDate =
         self.lastModifiedDate or self.lastModified or "19700101";
@@ -18,10 +35,8 @@
         });
     in {
       overlay = final: prev: {
-        JustEnoughMod = with final;
-          let
-            sources = import ./nix/sources.nix;
-          in stdenv.mkDerivation rec {
+        JustEnoughModCore = with final;
+          stdenv.mkDerivation rec {
             pname = "JustEnoughModCore";
             inherit version;
 
@@ -36,9 +51,9 @@
             buildInputs = [ SDL2 cmake libGL ];
 
             preConfigure = ''
-              cp -r ${sources.bgfx} subprojects/bgfx
-              cp -r ${sources.dylib} subprojects/dylib
-              cp -r ${sources.JustEnoughMod} subprojects/JustEnoughMod
+              cp -r ${bgfx} subprojects/bgfx
+              cp -r ${dylib} subprojects/dylib
+              cp -r ${JustEnoughMod} subprojects/JustEnoughMod
 
               chmod 777 -R subprojects
             '';
@@ -56,15 +71,15 @@
       };
 
       packages = forAllSystems
-        (system: { inherit (nixpkgsFor.${system}) JustEnoughMod; });
+        (system: { inherit (nixpkgsFor.${system}) JustEnoughModCore; });
 
       defaultPackage =
-        forAllSystems (system: self.packages.${system}.JustEnoughMod);
+        forAllSystems (system: self.packages.${system}.JustEnoughModCore);
 
-      nixosModules.JustEnoughMod = { pkgs, ... }: {
+      nixosModules.JustEnoughModCore = { pkgs, ... }: {
         nixpkgs.overlays = [ self.overlay ];
 
-        environment.systemPackages = [ pkgs.JustEnoughMod ];
+        environment.systemPackages = [ pkgs.JustEnoughModCore ];
       };
     };
 }
