@@ -5,11 +5,12 @@ using namespace JEM;
 class CorePlugin : public Plugin
 {
 public:
-    virtual const char *getPluginName()
+    virtual constexpr const char *getPluginName()
     {
         return "JustEnoughModCore";
     }
-    virtual Version getPluginVersion()
+
+    virtual constexpr Version getPluginVersion()
     {
         return "0.0.0";
     }
