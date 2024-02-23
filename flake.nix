@@ -3,16 +3,19 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     bgfx = {
       url = "https://github.com/LDprg/bgfx.meson";
+      flake = false;
       type = "git";
       submodules = true;
     };
     dylib = {
       url = "https://github.com/LDprg/dylib.meson";
+      flake = false;
       type = "git";
       submodules = true;
     };
     JustEnoughMod = {
       url = "https://github.com/LDprg/JustEnoughMod";
+      flake = false;
       type = "git";
       submodules = true;
     };
@@ -36,7 +39,7 @@
     in {
       overlay = final: _: {
         JustEnoughModCore = with final;
-          stdenv.mkDerivation rec {
+          gcc13Stdenv.mkDerivation rec {
             pname = "JustEnoughModCore";
             inherit version;
 
@@ -48,7 +51,7 @@
 
             nativeBuildInputs =
               [ pkg-config meson ninja ccache git binutils makeWrapper ];
-            buildInputs = [ SDL2 spdlog libGL ];
+            buildInputs = [ SDL2 libGL ];
 
             preConfigure = ''
               cp -r ${bgfx} subprojects/bgfx
@@ -61,9 +64,9 @@
             installPhase = ''
               mkdir -p $out/bin
               mkdir -p $out/bin/Plugins
-              mv subprojects/JustEnoughMod/JustEnoughMod $out/bin
-              mv subprojects/JustEnoughMod/libJustEnoughMod.so $out/bin
-              mv libJustEnoughModCore.so $out/bin/Plugins
+              cp subprojects/JustEnoughMod/JustEnoughMod $out/bin
+              cp subprojects/JustEnoughMod/libJustEnoughMod.so $out/bin
+              cp libJustEnoughModCore.so $out/bin/Plugins
               wrapProgram $out/bin/JustEnoughMod \
                 --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libGL ]}
             '';

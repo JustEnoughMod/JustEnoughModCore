@@ -1,17 +1,13 @@
 {
   "nodes": {
     "JustEnoughMod": {
-      "inputs": {
-        "bgfx": "bgfx",
-        "dylib": "dylib",
-        "nixpkgs": "nixpkgs_3"
-      },
+      "flake": false,
       "locked": {
-        "lastModified": 1708628596,
-        "narHash": "sha256-NSUN950QaJ0GKKxDaRoh/dU1jnPl9BTa2bMI84UeBtU=",
+        "lastModified": 1708629199,
+        "narHash": "sha256-kEh18+mDPcj18z3a8UjKnuvQ4nHdjHICMRxGxxHLSNI=",
         "ref": "refs/heads/main",
-        "rev": "1e687af77915c9ad57de57465d3c92a3fc26c117",
-        "revCount": 62,
+        "rev": "21a5575938b4c603c2a592ee355d4c52fdb8bd6d",
+        "revCount": 63,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/LDprg/JustEnoughMod"
@@ -23,35 +19,13 @@
       }
     },
     "bgfx": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
+      "flake": false,
       "locked": {
-        "lastModified": 1708169810,
-        "narHash": "sha256-1xGy+Rja9YNUWAc70ckc5H6tEmLeSPCUJ8T//eWKE1s=",
+        "lastModified": 1708631708,
+        "narHash": "sha256-gP1KruJxRWER6jgSzx/zhTYFxPaOCR4B1buhEmGXeYw=",
         "ref": "refs/heads/main",
-        "rev": "89a48c5573de712d41c3bd45a7d55cd0106bacf7",
-        "revCount": 10,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/LDprg/bgfx.meson"
-      },
-      "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/LDprg/bgfx.meson"
-      }
-    },
-    "bgfx_2": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_4"
-      },
-      "locked": {
-        "lastModified": 1708628568,
-        "narHash": "sha256-jCXjgLT/XMqu6wp37q5bSOhHkfX29aao7piPjxuw9zY=",
-        "ref": "refs/heads/main",
-        "rev": "42cd1c8eabac843474e7fd42a1eaf1ff6929ff11",
-        "revCount": 11,
+        "rev": "b73d24bbc85d247b232df5a07c90ad4e3eac50b6",
+        "revCount": 12,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/LDprg/bgfx.meson"
@@ -63,35 +37,13 @@
       }
     },
     "dylib": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2"
-      },
+      "flake": false,
       "locked": {
-        "lastModified": 1708170334,
-        "narHash": "sha256-bdYkfmxzv30+EQ4hXmIZ07rsyjz9YtSGEIOzUBDPJpM=",
+        "lastModified": 1708631675,
+        "narHash": "sha256-bcp+GCiigcq6NsVmee85URnwCsYUY7mniyynzRtY8xY=",
         "ref": "refs/heads/main",
-        "rev": "4cfc6d967e2735eb355ba993f6c95a5bd4d81a89",
-        "revCount": 2,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/LDprg/dylib.meson"
-      },
-      "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/LDprg/dylib.meson"
-      }
-    },
-    "dylib_2": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_5"
-      },
-      "locked": {
-        "lastModified": 1708170334,
-        "narHash": "sha256-bdYkfmxzv30+EQ4hXmIZ07rsyjz9YtSGEIOzUBDPJpM=",
-        "ref": "refs/heads/main",
-        "rev": "4cfc6d967e2735eb355ba993f6c95a5bd4d81a89",
-        "revCount": 2,
+        "rev": "6b07a1007e975aae6b7401a4a477423bd002363b",
+        "revCount": 4,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/LDprg/dylib.meson"
@@ -103,81 +55,6 @@
       }
     },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1707956935,
-        "narHash": "sha256-ZL2TrjVsiFNKOYwYQozpbvQSwvtV/3Me7Zwhmdsfyu4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a4d4fe8c5002202493e87ec8dbc91335ff55552c",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1708475490,
-        "narHash": "sha256-g1v0TsWBQPX97ziznfJdWhgMyMGtoBFs102xSYO4syU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0e74ca98a74bc7270d28838369593635a5db3260",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1708475490,
-        "narHash": "sha256-g1v0TsWBQPX97ziznfJdWhgMyMGtoBFs102xSYO4syU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0e74ca98a74bc7270d28838369593635a5db3260",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_4": {
-      "locked": {
-        "lastModified": 1707956935,
-        "narHash": "sha256-ZL2TrjVsiFNKOYwYQozpbvQSwvtV/3Me7Zwhmdsfyu4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "a4d4fe8c5002202493e87ec8dbc91335ff55552c",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_5": {
-      "locked": {
-        "lastModified": 1708475490,
-        "narHash": "sha256-g1v0TsWBQPX97ziznfJdWhgMyMGtoBFs102xSYO4syU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0e74ca98a74bc7270d28838369593635a5db3260",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_6": {
       "locked": {
         "lastModified": 1708475490,
         "narHash": "sha256-g1v0TsWBQPX97ziznfJdWhgMyMGtoBFs102xSYO4syU=",
@@ -195,9 +72,9 @@
     "root": {
       "inputs": {
         "JustEnoughMod": "JustEnoughMod",
-        "bgfx": "bgfx_2",
-        "dylib": "dylib_2",
-        "nixpkgs": "nixpkgs_6"
+        "bgfx": "bgfx",
+        "dylib": "dylib",
+        "nixpkgs": "nixpkgs"
       }
     }
   },

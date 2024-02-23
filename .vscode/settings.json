@@ -69,7 +69,10 @@
         "future": "cpp",
         "cfenv": "cpp",
         "chrono": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "queue": "cpp",
+        "span": "cpp",
+        "version": "cpp"
     },
     "mesonbuild.configureOnOpen": false,
     "cSpell.words": [

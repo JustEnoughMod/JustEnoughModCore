@@ -4,8 +4,6 @@ project('JustEnoughModCore', 'cpp',
                      'cpp_std=c++20',
                      'optimization=3'])
 
-add_project_arguments('-D_GLIBCXX_USE_CXX11_ABI=0', language : 'cpp')
-
 jem_proj = subproject('JustEnoughMod')
 jem_dep = jem_proj.get_variable('jem_dep')
 
