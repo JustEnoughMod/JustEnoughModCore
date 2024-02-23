@@ -72,7 +72,8 @@
         "regex": "cpp",
         "queue": "cpp",
         "span": "cpp",
-        "version": "cpp"
+        "version": "cpp",
+        "*.hpp11": "cpp"
     },
     "mesonbuild.configureOnOpen": false,
     "cSpell.words": [

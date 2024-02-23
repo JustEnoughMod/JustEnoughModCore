@@ -12,13 +12,15 @@ public:
 
     virtual constexpr Version getPluginVersion()
     {
-        return "0.0.0";
+#ifdef VERSION
+            return VERSION;
+#else
+            return "0.0.0";
+#endif
     }
 
     virtual void init()
     {
-        getLogger()->warn("Test");
-
         bgfx::setDebug(BGFX_DEBUG_TEXT);
         // bgfx::setDebug(BGFX_DEBUG_STATS);
     }
