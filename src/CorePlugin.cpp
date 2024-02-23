@@ -17,6 +17,8 @@ public:
 
     virtual void init()
     {
+        getLogger()->warn("Test");
+
         bgfx::setDebug(BGFX_DEBUG_TEXT);
         // bgfx::setDebug(BGFX_DEBUG_STATS);
     }
