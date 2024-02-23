@@ -3,4 +3,3 @@ build
 run
 subprojects/*
 !subprojects/JustEnoughMod
-!subprojects/*.wrap

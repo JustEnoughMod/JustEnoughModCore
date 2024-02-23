@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     bgfx = {
       url = "https://github.com/LDprg/bgfx.meson";
       flake = false;
@@ -21,68 +22,20 @@
     };
   };
 
-  outputs = { self, nixpkgs, bgfx, dylib, JustEnoughMod }:
+  outputs = { self, nixpkgs, flake-utils, bgfx, dylib, JustEnoughMod }:
     let
-      lastModifiedDate =
-        self.lastModifiedDate or self.lastModified or "19700101";
-      version = builtins.substring 0 8 lastModifiedDate;
-
-      supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
-
-      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-
-      nixpkgsFor = forAllSystems (system:
-        import nixpkgs {
+      overlay =
+        import ./overlay.nix { inherit nixpkgs bgfx dylib JustEnoughMod; };
+    in flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs {
           inherit system;
-          overlays = [ self.overlay ];
-        });
-    in {
-      overlay = final: _: {
-        JustEnoughModCore = with final;
-          gcc13Stdenv.mkDerivation rec {
-            pname = "JustEnoughModCore";
-            inherit version;
-
-            meta.mainProgram = "JustEnoughMod";
-
-            src = ./.;
-
-            enableParallelBuilding = true;
-
-            nativeBuildInputs =
-              [ pkg-config meson ninja ccache git binutils makeWrapper ];
-            buildInputs = [ SDL2 libGL ];
-
-            preConfigure = ''
-              cp -r ${bgfx} subprojects/bgfx
-              cp -r ${dylib} subprojects/dylib
-              cp -r ${JustEnoughMod} subprojects/JustEnoughMod
-
-              chmod 777 -R subprojects
-            '';
-
-            installPhase = ''
-              mkdir -p $out/bin
-              mkdir -p $out/bin/Plugins
-              cp subprojects/JustEnoughMod/JustEnoughMod $out/bin
-              cp subprojects/JustEnoughMod/libJustEnoughMod.so $out/bin
-              cp libJustEnoughModCore.so $out/bin/Plugins
-              wrapProgram $out/bin/JustEnoughMod \
-                --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libGL ]}
-            '';
-          };
-      };
-
-      packages = forAllSystems
-        (system: { inherit (nixpkgsFor.${system}) JustEnoughModCore; });
-
-      defaultPackage =
-        forAllSystems (system: self.packages.${system}.JustEnoughModCore);
-
-      nixosModules.JustEnoughModCore = { pkgs, ... }: {
-        nixpkgs.overlays = [ self.overlay ];
-
-        environment.systemPackages = [ pkgs.JustEnoughModCore ];
-      };
-    };
+          overlays = [ overlay ];
+        };
+      in {
+        legacyPackages = rec { JustEnoughModCore = pkgs.JustEnoughModCore; };
+        packages = nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v)
+          self.legacyPackages.${system};
+        defaultPackage = self.packages.${system}.JustEnoughModCore;
+      });
 }

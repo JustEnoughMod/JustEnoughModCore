@@ -4,8 +4,10 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/subprojects/bgfx/**/include",
                 "${workspaceFolder}/subprojects/**/include",
-                "${workspaceFolder}/subprojects/JustEnoughMod/include"
+                "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/bgfx/**/include",
+                "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/**/include"
             ],
             "defines": [],
             "cStandard": "c23",
