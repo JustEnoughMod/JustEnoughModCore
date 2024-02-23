@@ -3,11 +3,11 @@
     "JustEnoughMod": {
       "flake": false,
       "locked": {
-        "lastModified": 1708711971,
-        "narHash": "sha256-SJSa/n0+q204LwqLy96CkbxymyIa6v3YlU7swfKkmtU=",
+        "lastModified": 1708721763,
+        "narHash": "sha256-2bPwWKTm/s3XO2+MR2p2s4yt+YSXUbfYIVfE0Q5zvZw=",
         "ref": "refs/heads/main",
-        "rev": "268689a38b1ee117d644440bed0c768909ac9562",
-        "revCount": 66,
+        "rev": "f85ac1c67456a5b388a91cc0369e65ec8d0de810",
+        "revCount": 70,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/LDprg/JustEnoughMod"
