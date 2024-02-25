@@ -1,0 +1,117 @@
+{
+  "nodes": {
+    "JustEnoughMod": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1708865554,
+        "narHash": "sha256-ZTYW1E7JWvjE9KPfWmFVSlbhU6oP6AUzk3yyj2AngjE=",
+        "ref": "refs/heads/main",
+        "rev": "ac2bebef2b69711452790c38f961a999bb72c019",
+        "revCount": 71,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/LDprg/JustEnoughMod"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/LDprg/JustEnoughMod"
+      }
+    },
+    "bgfx": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1708868965,
+        "narHash": "sha256-vJ8Eg67CHQOvgSw6AFKgPQ8Jmg2sBBNuRRMqkS7wvAQ=",
+        "ref": "refs/heads/main",
+        "rev": "8b18e4a7f531b024364d03763b1b4742f16b3f1f",
+        "revCount": 21,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/LDprg/bgfx.meson"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/LDprg/bgfx.meson"
+      }
+    },
+    "dylib": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1708865537,
+        "narHash": "sha256-bsUoCK+1Hp8IsuCina153+ob5d5bBGmFawKP3YfImuQ=",
+        "ref": "refs/heads/main",
+        "rev": "4be0ace8a7fe3cd105f913409d1c42e93e338050",
+        "revCount": 5,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/LDprg/dylib.meson"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/LDprg/dylib.meson"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1705309234,
+        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1708655239,
+        "narHash": "sha256-ZrP/yACUvDB+zbqYJsln4iwotbH6CTZiTkANJ0AgDv4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "cbc4211f0afffe6dfd2478a62615dd5175a13f9a",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-unstable",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "JustEnoughMod": "JustEnoughMod",
+        "bgfx": "bgfx",
+        "dylib": "dylib",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
