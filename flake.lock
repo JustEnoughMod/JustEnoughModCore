@@ -3,11 +3,11 @@
     "JustEnoughMod": {
       "flake": false,
       "locked": {
-        "lastModified": 1708721763,
-        "narHash": "sha256-2bPwWKTm/s3XO2+MR2p2s4yt+YSXUbfYIVfE0Q5zvZw=",
+        "lastModified": 1708865554,
+        "narHash": "sha256-ZTYW1E7JWvjE9KPfWmFVSlbhU6oP6AUzk3yyj2AngjE=",
         "ref": "refs/heads/main",
-        "rev": "f85ac1c67456a5b388a91cc0369e65ec8d0de810",
-        "revCount": 70,
+        "rev": "ac2bebef2b69711452790c38f961a999bb72c019",
+        "revCount": 71,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/LDprg/JustEnoughMod"
@@ -21,11 +21,11 @@
     "bgfx": {
       "flake": false,
       "locked": {
-        "lastModified": 1708861702,
-        "narHash": "sha256-bDJmOXle+nWrmMjSbF1U93ji2lQn6gjSxI6SlfJ8wkY=",
+        "lastModified": 1708868965,
+        "narHash": "sha256-vJ8Eg67CHQOvgSw6AFKgPQ8Jmg2sBBNuRRMqkS7wvAQ=",
         "ref": "refs/heads/main",
-        "rev": "57661066924229ac5caf8ca73ed3b0127b7265ec",
-        "revCount": 15,
+        "rev": "8b18e4a7f531b024364d03763b1b4742f16b3f1f",
+        "revCount": 21,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/LDprg/bgfx.meson"
@@ -39,11 +39,11 @@
     "dylib": {
       "flake": false,
       "locked": {
-        "lastModified": 1708631675,
-        "narHash": "sha256-bcp+GCiigcq6NsVmee85URnwCsYUY7mniyynzRtY8xY=",
+        "lastModified": 1708865537,
+        "narHash": "sha256-bsUoCK+1Hp8IsuCina153+ob5d5bBGmFawKP3YfImuQ=",
         "ref": "refs/heads/main",
-        "rev": "6b07a1007e975aae6b7401a4a477423bd002363b",
-        "revCount": 4,
+        "rev": "4be0ace8a7fe3cd105f913409d1c42e93e338050",
+        "revCount": 5,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/LDprg/dylib.meson"

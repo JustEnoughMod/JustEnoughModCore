@@ -33,9 +33,6 @@
           overlays = [ overlay ];
         };
       in {
-        legacyPackages = rec { JustEnoughModCore = pkgs.JustEnoughModCore; };
-        packages = nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v)
-          self.legacyPackages.${system};
-        defaultPackage = self.packages.${system}.JustEnoughModCore;
+        packages.default = pkgs.JustEnoughModCore;
       });
 }
