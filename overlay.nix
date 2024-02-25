@@ -10,7 +10,7 @@ final: prev: {
 
       enableParallelBuilding = true;
 
-      nativeBuildInputs = [ pkg-config meson ninja ccache mold makeWrapper ];
+      nativeBuildInputs = [ pkg-config meson ninja makeWrapper ];
       buildInputs = [ SDL2 spdlog libGL wayland ];
 
       preConfigure = ''
