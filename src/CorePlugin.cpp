@@ -23,6 +23,8 @@ public:
     {
         bgfx::setDebug(BGFX_DEBUG_TEXT);
         // bgfx::setDebug(BGFX_DEBUG_STATS);
+
+        getLogger()->error("test");
     }
 
     virtual void update()
