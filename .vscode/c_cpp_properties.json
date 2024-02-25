@@ -9,6 +9,8 @@
         "${workspaceFolder}/**",
         "${workspaceFolder}/subprojects/bgfx/**/include",
         "${workspaceFolder}/subprojects/**/include",
+        "${workspaceFolder}/subprojects/**/egl",
+        "${workspaceFolder}/subprojects/**/src",
         "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/bgfx/**/include",
         "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/**/include"
       ],

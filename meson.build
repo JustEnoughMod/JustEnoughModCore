@@ -6,7 +6,8 @@ add_project_arguments('-DVERSION="@0@"'.format(meson.project_version()), languag
 
 jem_dep = subproject('JustEnoughMod').get_variable('jem_dep')
 
-library('JustEnoughModCore', 'src/CorePlugin.cpp',
+library('JustEnoughModCore',
+  'src/CorePlugin.cpp',
   dependencies: [
     jem_dep
   ])

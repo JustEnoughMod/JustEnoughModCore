@@ -10,8 +10,8 @@ final: prev: {
 
       enableParallelBuilding = true;
 
-      nativeBuildInputs = [ pkg-config meson ninja ccache makeWrapper ];
-      buildInputs = [ SDL2 spdlog libGL ];
+      nativeBuildInputs = [ pkg-config meson ninja ccache mold makeWrapper ];
+      buildInputs = [ SDL2 spdlog libGL wayland ];
 
       preConfigure = ''
         cp -r ${JustEnoughMod} subprojects/JustEnoughMod

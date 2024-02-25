@@ -18,9 +18,7 @@ class CorePlugin : public Plugin {
 
     virtual void init() {
       bgfx::setDebug(BGFX_DEBUG_TEXT);
-      // bgfx::setDebug(BGFX_DEBUG_STATS);
-
-      getLogger()->error("test");
+      bgfx::setDebug(BGFX_DEBUG_STATS);
     }
 
     virtual void update() {
