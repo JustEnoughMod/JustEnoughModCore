@@ -18,5 +18,6 @@ repos:
       - id: fix-byte-order-marker
       - id: mixed-line-ending
       - id: pretty-format-json
+        args: ['--autofix']
       - id: sort-simple-yaml
       - id: trailing-whitespace

@@ -31,7 +31,7 @@ final: prev: {
         cp subprojects/JustEnoughMod/JustEnoughMod $out/bin
         cp subprojects/JustEnoughMod/libJustEnoughMod.so $out/bin
         cp libJustEnoughModCore.so $out/bin/Plugins
-        
+
         wrapProgram $out/bin/JustEnoughMod \
           --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libGL ]}
       '';
