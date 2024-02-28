@@ -33,7 +33,9 @@ final: prev: {
         cp libJustEnoughModCore.so $out/bin/Plugins
 
         wrapProgram $out/bin/JustEnoughMod \
-          --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libGL vulkan-loader ]}
+          --prefix LD_LIBRARY_PATH : ${
+            lib.makeLibraryPath [ libGL vulkan-loader ]
+          }
       '';
 
       LD_LIBRARY_PATH = lib.makeLibraryPath [ libGL vulkan-loader ];

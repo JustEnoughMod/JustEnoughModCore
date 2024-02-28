@@ -32,7 +32,5 @@
           inherit system;
           overlays = [ overlay ];
         };
-      in {
-        packages.default = pkgs.JustEnoughModCore;
-      });
+      in { packages.default = pkgs.JustEnoughModCore; });
 }
