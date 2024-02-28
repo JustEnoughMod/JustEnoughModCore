@@ -11,7 +11,7 @@ final: prev: {
       enableParallelBuilding = true;
 
       nativeBuildInputs = [ pkg-config meson ninja makeWrapper ];
-      buildInputs = [ SDL2 spdlog libGL wayland ];
+      buildInputs = [ SDL2 spdlog libGL vulkan-loader wayland ];
 
       preConfigure = ''
         cp -r ${JustEnoughMod} subprojects/JustEnoughMod
@@ -33,7 +33,9 @@ final: prev: {
         cp libJustEnoughModCore.so $out/bin/Plugins
 
         wrapProgram $out/bin/JustEnoughMod \
-          --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libGL ]}
+          --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libGL vulkan-loader ]}
       '';
+
+      LD_LIBRARY_PATH = lib.makeLibraryPath [ libGL vulkan-loader ];
     };
 }
