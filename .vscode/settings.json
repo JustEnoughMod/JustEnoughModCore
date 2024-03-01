@@ -42,6 +42,7 @@
     "deque": "cpp",
     "exception": "cpp",
     "filesystem": "cpp",
+    "format": "cpp",
     "fstream": "cpp",
     "functional": "cpp",
     "future": "cpp",
