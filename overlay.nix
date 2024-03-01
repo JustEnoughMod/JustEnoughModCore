@@ -10,7 +10,7 @@ final: _: {
 
       enableParallelBuilding = true;
 
-      nativeBuildInputs = [ pkg-config meson ninja makeWrapper ];
+      nativeBuildInputs = [ clang-tools pkg-config meson ninja makeWrapper ];
       buildInputs = [ SDL2 spdlog libGL vulkan-loader wayland ];
 
       preConfigure = ''
