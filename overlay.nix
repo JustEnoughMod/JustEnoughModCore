@@ -1,5 +1,5 @@
-{ nixpkgs, bgfx, dylib, JustEnoughMod, ... }:
-final: prev: {
+{ bgfx, dylib, JustEnoughMod, ... }:
+final: _: {
   JustEnoughModCore = with final;
     clangStdenv.mkDerivation rec {
       name = "JustEnoughModCore";
