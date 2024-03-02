@@ -3,19 +3,12 @@
     "JustEnoughMod": {
       "flake": false,
       "locked": {
-        "lastModified": 1709391633,
-        "narHash": "sha256-tWoKwR8DjL1GeAdVMydDUpM4oCOsfxJoBL4ZH5Kyxuk=",
-        "ref": "main",
-        "rev": "f2a73c43b82a474d45c49c5c9f9ddd5c3a31415a",
-        "revCount": 112,
-        "submodules": true,
-        "type": "git",
+        "narHash": "sha256-TwF+x1B0O4WpCv/DUv/XT6uQU15iAi3h+w7m0FG/GiI=",
+        "type": "file",
         "url": "https://github.com/JustEnoughMod/JustEnoughMod"
       },
       "original": {
-        "ref": "main",
-        "submodules": true,
-        "type": "git",
+        "type": "file",
         "url": "https://github.com/JustEnoughMod/JustEnoughMod"
       }
     },
@@ -41,19 +34,12 @@
     "dylib": {
       "flake": false,
       "locked": {
-        "lastModified": 1708884090,
-        "narHash": "sha256-bsUoCK+1Hp8IsuCina153+ob5d5bBGmFawKP3YfImuQ=",
-        "ref": "main",
-        "rev": "f1ef935d90f17d0b29b72c5bf401e7b4d0328bc4",
-        "revCount": 6,
-        "submodules": true,
-        "type": "git",
+        "narHash": "sha256-ZPo1umNuwkEZ+hVVeIqLZVklhD729r1i+kI3/ryZrew=",
+        "type": "file",
         "url": "https://github.com/JustEnoughMod/dylib.meson"
       },
       "original": {
-        "ref": "main",
-        "submodules": true,
-        "type": "git",
+        "type": "file",
         "url": "https://github.com/JustEnoughMod/dylib.meson"
       }
     },

@@ -5,24 +5,18 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     bgfx = {
       url = "https://github.com/JustEnoughMod/bgfx.meson";
-      ref="main";
+      ref = "main";
       flake = false;
       type = "git";
       submodules = true;
     };
     dylib = {
       url = "https://github.com/JustEnoughMod/dylib.meson";
-      ref="main";
       flake = false;
-      type = "git";
-      submodules = true;
     };
     JustEnoughMod = {
       url = "https://github.com/JustEnoughMod/JustEnoughMod";
-      ref="main";
       flake = false;
-      type = "git";
-      submodules = true;
     };
   };
 
@@ -185,6 +179,10 @@
               clang-format.enable = true;
             };
           };
+        };
+
+        devShells.precommit = mkShell {
+          inherit (self.checks.${system}.pre-commit-check) shellHook;
         };
 
         devShells.default = JustEnoughModCore-shell;
