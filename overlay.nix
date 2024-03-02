@@ -37,7 +37,5 @@ final: _: {
             lib.makeLibraryPath [ libGL vulkan-loader ]
           }
       '';
-
-      LD_LIBRARY_PATH = lib.makeLibraryPath [ libGL vulkan-loader ];
     };
 }

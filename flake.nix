@@ -17,7 +17,7 @@
     };
     JustEnoughMod = {
       url = "https://github.com/LDprg/JustEnoughMod";
-      flake = true;
+      flake = false;
       type = "git";
       submodules = true;
     };
@@ -25,15 +25,25 @@
 
   outputs = { self, nixpkgs, flake-utils, pre-commit-hooks, bgfx, dylib
     , JustEnoughMod }:
-    let overlay = import ./overlay.nix { inherit bgfx dylib JustEnoughMod; };
+    let
+      overlayPackage =
+        import ./overlay.nix { inherit bgfx dylib JustEnoughMod; };
     in flake-utils.lib.eachDefaultSystem (system:
       let
+        overlayShell = _: prev: {
+          JustEnoughModCore-shell = prev.JustEnoughModCore.overrideAttrs (_: {
+            inherit (self.checks.${system}.pre-commit-check) shellHook;
+
+            LD_LIBRARY_PATH =
+              prev.lib.makeLibraryPath [ prev.libGL prev.vulkan-loader ];
+          });
+        };
+
         pkgs = import nixpkgs {
           inherit system;
-          overlays = [ overlay ];
+          overlays = [ overlayPackage overlayShell ];
         };
       in with pkgs; {
-
         checks = {
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
             src = ./.;
@@ -162,15 +172,19 @@
                   "${python3Packages.pre-commit-hooks}/bin/trailing-whitespace-fixer";
               };
 
-              nixfmt.enable = true;
               deadnix.enable = true;
+              nil.enable = true;
+              nixfmt.enable = true;
+              statix.enable = true;
+
+              shfmt.enable = true;
+
               clang-format.enable = true;
             };
           };
         };
-        devShells.default = mkShell {
-          inherit (self.checks.${system}.pre-commit-check) shellHook;
-        };
+
+        devShells.default = JustEnoughModCore-shell;
         packages.default = JustEnoughModCore;
       });
 }
