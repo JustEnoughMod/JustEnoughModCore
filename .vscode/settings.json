@@ -10,6 +10,7 @@
     "yrel"
   ],
   "files.associations": {
+    "*.cppm": "cpp",
     "*.hpp11": "cpp",
     "*.tcc": "cpp",
     "algorithm": "cpp",
@@ -40,6 +41,8 @@
     "cwctype": "cpp",
     "deque": "cpp",
     "exception": "cpp",
+    "filesystem": "cpp",
+    "format": "cpp",
     "fstream": "cpp",
     "functional": "cpp",
     "future": "cpp",
@@ -68,6 +71,7 @@
     "set": "cpp",
     "span": "cpp",
     "sstream": "cpp",
+    "stddef.h": "c",
     "stdexcept": "cpp",
     "stop_token": "cpp",
     "streambuf": "cpp",
@@ -78,12 +82,15 @@
     "tuple": "cpp",
     "type_traits": "cpp",
     "typeinfo": "cpp",
+    "types.h": "c",
     "unordered_map": "cpp",
     "unordered_set": "cpp",
     "utility": "cpp",
     "variant": "cpp",
     "vector": "cpp",
-    "version": "cpp"
+    "version": "cpp",
+    "wayland-client-core.h": "c",
+    "wayland-egl-core.h": "c"
   },
   "mesonbuild.configureOnOpen": false
 }

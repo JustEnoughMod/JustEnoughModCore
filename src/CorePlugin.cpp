@@ -4,26 +4,24 @@ using namespace JEM;
 
 class CorePlugin : public Plugin {
   public:
-    virtual constexpr const char *getPluginName() {
+    [[nodiscard]] constexpr const char *getPluginName() override {
       return "JustEnoughModCore";
     }
 
-    virtual constexpr Version getPluginVersion() {
+    [[nodiscard]] constexpr Version getPluginVersion() override {
 #ifdef VERSION
-      return VERSION;
+      return Version(VERSION);
 #else
-      return "0.0.0";
+      return Version("0.0.0");
 #endif
     }
 
-    virtual void init() {
+    void init() override {
       bgfx::setDebug(BGFX_DEBUG_TEXT);
-      // bgfx::setDebug(BGFX_DEBUG_STATS);
-
-      getLogger()->error("test");
+      bgfx::setDebug(BGFX_DEBUG_STATS);
     }
 
-    virtual void update() {
+    void update() override {
       bgfx::dbgTextClear();
 
       const bgfx::Stats *stats = bgfx::getStats();

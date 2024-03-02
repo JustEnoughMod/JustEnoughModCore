@@ -3,3 +3,4 @@ build
 run
 subprojects/*
 !subprojects/JustEnoughMod
+.pre-commit-config.yaml

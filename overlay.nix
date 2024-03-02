@@ -1,5 +1,5 @@
-{ nixpkgs, bgfx, dylib, JustEnoughMod, ... }:
-final: prev: {
+{ bgfx, dylib, JustEnoughMod, ... }:
+final: _: {
   JustEnoughModCore = with final;
     clangStdenv.mkDerivation rec {
       name = "JustEnoughModCore";
@@ -10,8 +10,8 @@ final: prev: {
 
       enableParallelBuilding = true;
 
-      nativeBuildInputs = [ pkg-config meson ninja ccache makeWrapper ];
-      buildInputs = [ SDL2 spdlog libGL ];
+      nativeBuildInputs = [ clang-tools pkg-config meson ninja makeWrapper ];
+      buildInputs = [ SDL2 spdlog libGL vulkan-loader wayland ];
 
       preConfigure = ''
         cp -r ${JustEnoughMod} subprojects/JustEnoughMod
@@ -33,7 +33,9 @@ final: prev: {
         cp libJustEnoughModCore.so $out/bin/Plugins
 
         wrapProgram $out/bin/JustEnoughMod \
-          --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ libGL ]}
+          --prefix LD_LIBRARY_PATH : ${
+            lib.makeLibraryPath [ libGL vulkan-loader ]
+          }
       '';
     };
 }
