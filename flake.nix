@@ -4,19 +4,22 @@
     flake-utils.url = "github:numtide/flake-utils";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     bgfx = {
-      url = "https://github.com/LDprg/bgfx.meson";
+      url = "https://github.com/JustEnoughMod/bgfx.meson";
+      ref="main";
       flake = false;
       type = "git";
       submodules = true;
     };
     dylib = {
-      url = "https://github.com/LDprg/dylib.meson";
+      url = "https://github.com/JustEnoughMod/dylib.meson";
+      ref="main";
       flake = false;
       type = "git";
       submodules = true;
     };
     JustEnoughMod = {
-      url = "https://github.com/LDprg/JustEnoughMod";
+      url = "https://github.com/JustEnoughMod/JustEnoughMod";
+      ref="main";
       flake = false;
       type = "git";
       submodules = true;
