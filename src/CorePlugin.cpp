@@ -4,11 +4,11 @@ using namespace JEM;
 
 class CorePlugin : public Plugin {
   public:
-    [[nodiscard]] constexpr const char *getPluginName() override {
+    [[nodiscard]] constexpr auto getPluginName() -> const char * override {
       return "JustEnoughModCore";
     }
 
-    [[nodiscard]] constexpr Version getPluginVersion() override {
+    [[nodiscard]] constexpr auto getPluginVersion() -> Version override {
 #ifdef VERSION
       return Version(VERSION);
 #else
