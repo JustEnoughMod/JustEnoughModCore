@@ -3,7 +3,7 @@
     "JustEnoughMod": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-KKeLQLXmglsYXE8qPOy7CsugmPNTT9rzrrEu9ol45pI=",
+        "narHash": "sha256-aGUl24Zm2nQh+Fy4ZP6/xJEYTnIjp4WF/E3IvRerIHM=",
         "type": "file",
         "url": "https://github.com/JustEnoughMod/JustEnoughMod"
       },
@@ -34,7 +34,7 @@
     "dylib": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-vp/YMSdx9/pJ/Cscc8YpL3vvALawIZLd1M88bzOebRI=",
+        "narHash": "sha256-DC1e/5tr5u6vKzRnJ2qHqVphyjOOHhDIesN0zO4VUls=",
         "type": "file",
         "url": "https://github.com/JustEnoughMod/dylib.meson"
       },
