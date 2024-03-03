@@ -3,7 +3,7 @@
     "JustEnoughMod": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-aGUl24Zm2nQh+Fy4ZP6/xJEYTnIjp4WF/E3IvRerIHM=",
+        "narHash": "sha256-RxmLQ0Hj6ejAFyZUO/rmmgm9EqPFth0in5XsWegSPHc=",
         "type": "file",
         "url": "https://github.com/JustEnoughMod/JustEnoughMod"
       },
@@ -15,26 +15,19 @@
     "bgfx": {
       "flake": false,
       "locked": {
-        "lastModified": 1709378567,
-        "narHash": "sha256-Ym6zoNNOoPljnFYAq2509RwnhsxeVsbemqSwNS+x6MU=",
-        "ref": "main",
-        "rev": "89124ce823ec98c49cb401d82096fbf676af2644",
-        "revCount": 26,
-        "submodules": true,
-        "type": "git",
+        "narHash": "sha256-kWeQkIpshCGWv+/LN0crhop59ZJmzxlwWe5ck5dbekA=",
+        "type": "file",
         "url": "https://github.com/JustEnoughMod/bgfx.meson"
       },
       "original": {
-        "ref": "main",
-        "submodules": true,
-        "type": "git",
+        "type": "file",
         "url": "https://github.com/JustEnoughMod/bgfx.meson"
       }
     },
     "dylib": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-DC1e/5tr5u6vKzRnJ2qHqVphyjOOHhDIesN0zO4VUls=",
+        "narHash": "sha256-m3PUJHRn/7X7dKuQg4GOEfw9g7pj34yMo6q26aY6vF0=",
         "type": "file",
         "url": "https://github.com/JustEnoughMod/dylib.meson"
       },
@@ -62,24 +55,6 @@
     "flake-utils": {
       "inputs": {
         "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1709126324,
-        "narHash": "sha256-q6EQdSeUZOG26WelxqkmR7kArjgWCdw5sfJVHPH/7j8=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "d465f4819400de7c8d874d50b982301f28a84605",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_2": {
-      "inputs": {
-        "systems": "systems_2"
       },
       "locked": {
         "lastModified": 1701680307,
@@ -166,7 +141,7 @@
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils",
         "gitignore": "gitignore",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable"
@@ -190,27 +165,11 @@
         "JustEnoughMod": "JustEnoughMod",
         "bgfx": "bgfx",
         "dylib": "dylib",
-        "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
         "pre-commit-hooks": "pre-commit-hooks"
       }
     },
     "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
