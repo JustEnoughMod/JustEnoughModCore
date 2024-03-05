@@ -12,7 +12,8 @@
         "${workspaceFolder}/subprojects/**/egl",
         "${workspaceFolder}/subprojects/**/src",
         "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/bgfx/**/include",
-        "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/**/include"
+        "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/**/include",
+        "${workspaceFolder}/subprojects/JustEnoughMod/pch"
       ],
       "intelliSenseMode": "linux-clang-x64",
       "name": "Linux"

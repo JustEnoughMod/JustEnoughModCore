@@ -1,7 +1,7 @@
 { bgfx, dylib, JustEnoughMod, ... }:
 final: _: {
   JustEnoughModCore = with final;
-    clangStdenv.mkDerivation rec {
+    clangStdenv.mkDerivation {
       name = "JustEnoughModCore";
 
       meta.mainProgram = "JustEnoughMod";
