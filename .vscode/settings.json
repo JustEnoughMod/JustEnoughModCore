@@ -28,6 +28,7 @@
     "cmath": "cpp",
     "codecvt": "cpp",
     "compare": "cpp",
+    "complex": "cpp",
     "concepts": "cpp",
     "condition_variable": "cpp",
     "cstdarg": "cpp",

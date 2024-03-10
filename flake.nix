@@ -10,11 +10,11 @@
       submodules = true;
     };
     dylib = {
-      url = "https://github.com/JustEnoughMod/dylib.meson";
+      url = "github:JustEnoughMod/dylib.meson";
       flake = false;
     };
     JustEnoughMod = {
-      url = "https://github.com/JustEnoughMod/JustEnoughMod";
+      url = "github:JustEnoughMod/JustEnoughMod";
       flake = false;
     };
   };
@@ -48,10 +48,8 @@
           inherit (pkgs.${system}.JustEnoughModCore)
             nativeBuildInputs buildInputs;
 
-          LD_LIBRARY_PATH = pkgs.${system}.lib.makeLibraryPath [
-            pkgs.${system}.libGL
-            pkgs.${system}.vulkan-loader
-          ];
+          LD_LIBRARY_PATH = pkgs.${system}.lib.makeLibraryPath
+            pkgs.${system}.JustEnoughModCore.buildInputs;
         };
       });
 

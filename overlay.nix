@@ -12,9 +12,31 @@ final: _: {
 
       nativeBuildInputs =
         [ clang-tools pkg-config meson ninja makeWrapper doxygen graphviz ];
-      buildInputs = [ SDL2 spdlog libGL vulkan-loader wayland ];
+      buildInputs = [
+        SDL2
+        spdlog
+        libGL
+        vulkan-loader
+        wayland
+        wayland-protocols
+        wayland-scanner
+        libxkbcommon
+        xorg.libX11
+        xorg.libICE
+        xorg.libXi
+        xorg.libXScrnSaver
+        xorg.libXcursor
+        xorg.libXinerama
+        xorg.libXext
+        xorg.libXrandr
+        xorg.libXxf86vm
+      ];
 
       preConfigure = ''
+        mkdir -p subprojects
+
+        chmod 777 -R subprojects
+
         cp -r ${JustEnoughMod} subprojects/JustEnoughMod
 
         chmod 777 -R subprojects

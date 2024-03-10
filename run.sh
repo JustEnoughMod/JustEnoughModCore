@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
+rm -r ./run/*
+
 mkdir -p ./run/Plugins
 
-rm ./run/JustEnoughMod
-cp ./build/subprojects/JustEnoughMod/JustEnoughMod ./run/JustEnoughMod
+cp ./build/subprojects/JustEnoughMod/JustEnoughMod ./run/
 
-rm ./run/libJustEnoughMod.so
-cp ./build/subprojects/JustEnoughMod/libJustEnoughMod.so ./run/libJustEnoughMod.so
+cp ./build/subprojects/JustEnoughMod/libJustEnoughMod.so ./run/
 
-rm ./run/Plugins/libJustEnoughModCore.so
-cp ./build/libJustEnoughModCore.so ./run/Plugins/libJustEnoughModCore.so
+cp ./build/libJustEnoughModCore.so ./run/Plugins/
 
 ./run/JustEnoughMod
