@@ -205,7 +205,10 @@
 
             shfmt.enable = true;
 
-            clang-format.enable = true;
+            clang-format = {
+              enable = true;
+              types_or = pkgs.${system}.lib.mkForce [ "c" "c++" ];
+            };
 
             cppcheck = {
               enable = true;
