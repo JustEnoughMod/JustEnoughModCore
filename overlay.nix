@@ -14,16 +14,15 @@ final: _: {
         [ clang-tools pkg-config meson ninja makeWrapper doxygen graphviz ];
 
       buildInputs = [
-        SDL2
-        spdlog
+        glfw-wayland
         wayland
-        libGL
+        spdlog
         vulkan-headers
         vulkan-loader
         vulkan-validation-layers
       ];
 
-      libPath = [ SDL2 spdlog wayland libGL vulkan-loader ];
+      libPath = [ vulkan-loader ];
 
       preConfigure = ''
         mkdir -p subprojects
