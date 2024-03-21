@@ -16,15 +16,9 @@ final: _: {
       nativeBuildInputs =
         [ clang-tools_17 pkg-config meson ninja makeWrapper doxygen graphviz ];
 
-      buildInputs = [
-        glfw-wayland
-        wayland
-        spdlog
-        vulkan-headers
-        vulkan-loader
-        vulkan-validation-layers
-        tree
-      ];
+      buildInputs =
+        [ glfw-wayland wayland spdlog vulkan-headers vulkan-validation-layers ]
+        ++ libPath;
 
       preConfigure = ''
         mkdir -p subprojects
