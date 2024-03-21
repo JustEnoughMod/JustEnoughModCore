@@ -2,7 +2,7 @@
 
 using namespace JEM;
 
-class CorePlugin : public Plugin {
+class CorePlugin : public Plugin::Plugin {
   public:
     [[nodiscard]] constexpr auto getPluginName() -> const char * override {
       return "JustEnoughModCore";

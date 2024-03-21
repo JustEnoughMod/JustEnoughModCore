@@ -7,13 +7,10 @@
       "defines": [],
       "includePath": [
         "${workspaceFolder}/**",
-        "${workspaceFolder}/subprojects/bgfx/**/include",
         "${workspaceFolder}/subprojects/**/include",
-        "${workspaceFolder}/subprojects/**/egl",
         "${workspaceFolder}/subprojects/**/src",
-        "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/bgfx/**/include",
         "${workspaceFolder}/subprojects/JustEnoughMod/subprojects/**/include",
-        "${workspaceFolder}/subprojects/JustEnoughMod/pch"
+        "/nix/store/cmibr2smhda4iby4kj3skq8zai3jw05s-vulkan-headers-1.3.275.0/include/"
       ],
       "intelliSenseMode": "linux-clang-x64",
       "name": "Linux"

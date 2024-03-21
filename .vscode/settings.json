@@ -42,6 +42,7 @@
     "cwctype": "cpp",
     "deque": "cpp",
     "exception": "cpp",
+    "expected": "cpp",
     "filesystem": "cpp",
     "format": "cpp",
     "fstream": "cpp",
