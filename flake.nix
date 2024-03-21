@@ -3,8 +3,11 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     dylib = {
-      url = "github:JustEnoughMod/dylib.meson";
+      url = "https://github.com/JustEnoughMod/dylib.meson";
       flake = false;
+      ref = "main";
+      submodules = true;
+      type = "git";
     };
     JustEnoughMod = {
       url = "github:JustEnoughMod/JustEnoughMod";
@@ -43,6 +46,10 @@
 
           LD_LIBRARY_PATH = pkgs.${system}.lib.makeLibraryPath
             pkgs.${system}.JustEnoughModCore.libPath;
+
+          VK_LAYER_PATH = "${
+              pkgs.${system}.vulkan-validation-layers
+            }/share/vulkan/explicit_layer.d";
         };
       });
 
